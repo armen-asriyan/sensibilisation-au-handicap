@@ -1,0 +1,902 @@
+/* --------------------------------- */
+/* Variables racines pour le thème */
+/* Définit les tailles de police, couleurs, et gradients utilisés dans le site */
+/* --------------------------------- */
+
+:root {
+  /* Typographie */
+
+  --default-line-height: 1.6; /* Hauteur de ligne pour le texte de base */
+  --default-font-size: 18px; /* Taille de la police pour le texte de base */
+  --h1-font-size: 36px; /* Taille de la police pour H1 */
+  --h2-font-size: 30px; /* Taille de la police pour H2 */
+  --h3-font-size: 24px; /* Taille de la police pour H3 */
+  --h4-font-size: 20px; /* Taille de la police pour H4 */
+  --h5-font-size: 18px; /* Taille de la police pour H5 (même que le texte de base) */
+  --h6-font-size: 16px; /* Taille de la police pour H6 */
+
+  /* Couleurs */
+
+  --primary-color: #0c70c0;
+  --secondary-color: #28a745;
+  --accent-color: #101056;
+  --text-color: #f0f0f0;
+  --required-color: #00ff67;
+  --articles-section-background-color-gradient: linear-gradient(
+    to bottom,
+    #1c3e8d,
+    #1c3c88,
+    #1c3a83,
+    #1c397f,
+    #1c377a
+  );
+
+  --single-article-background-color: #101056; /* Couleur pour un article individuel */
+}
+
+/* --------------------------------- */
+/* Styles de base et utilitaires */
+/* Définit les transitions et classes utilitaires communes */
+/* --------------------------------- */
+
+* {
+  transition: 0.3s;
+}
+
+/* Classes utilitaires pour la mise en page */
+
+.vertical-padding-20 {
+  /* Classe pour ajouter du padding vertical */
+  padding: 0 20px;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.columned {
+  flex-direction: column;
+}
+
+.required {
+  color: var(--required-color);
+}
+
+/* --------------------------------- */
+/* Styles typographiques de base */
+/* Configure la typographie générale du site */
+/* --------------------------------- */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: var(--default-font-size); /* Taille par défaut du texte */
+  line-height: var(--default-line-height); /* Hauteur de ligne par défaut */
+  color: var(--text-color); /* Couleur du texte par défaut */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+input,
+label,
+button,
+figure,
+select {
+  font-family: Roboto, serif; /* Police utilisée pour les titres et liens */
+}
+
+h1,
+.h1-sized {
+  font-size: var(--h1-font-size); /* Taille H1 */
+}
+
+h2 {
+  font-size: var(--h2-font-size); /* Taille H2 */
+}
+
+h3 {
+  font-size: var(--h3-font-size); /* Taille H3 */
+}
+
+h4 {
+  font-size: var(--h4-font-size); /* Taille H4 */
+}
+
+h5 {
+  font-size: var(--h5-font-size); /* Taille H5 */
+}
+
+h6 {
+  font-size: var(--h6-font-size); /* Taille H6 */
+}
+
+p {
+  font-family: Lato, sans-serif; /* Police utilisée pour les paragraphes */
+}
+
+/* --------------------------------- */
+/* En-tête et navigation */
+/* Styles pour le header fixe et la barre de navigation */
+/* --------------------------------- */
+
+header {
+  /* Position fixe pour garder le header visible en haut de la page */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+#navbar {
+  background-color: var(
+    --primary-color
+  ); /* Couleur de fond de la barre de navigation */
+
+  color: var(--text-color); /* Couleur du texte dans le navbar */
+  width: 100%;
+  height: 64px;
+  display: flex;
+  justify-content: space-around; /* Espace autour des éléments du navbar */
+  align-items: center; /* Alignement vertical centré des éléments */
+  border-bottom: 1px solid var(--accent-color); /* Bordure de bas pour le navbar */
+}
+
+#navbar ul {
+  list-style-type: none; /* Supprimer les puces pour les éléments de liste */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 5px;
+}
+
+#navbar h2 {
+  margin: 0;
+  font-size: 2.5vw;
+}
+
+#navbar a {
+  text-decoration: none; /* Supprimer la décoration de lien */
+  color: var(--text-color); /* Couleur du texte des liens */
+  display: flex;
+  height: 64px;
+  align-items: center;
+  padding: 0 10px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* --------------------------------- */
+/* Section Hero */
+/* Styles pour la bannière principale avec image de fond */
+/* --------------------------------- */
+
+#hero {
+  background-image: url("../img/hero.webp"); /* Image de fond pour la section hero */
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover; /* Couvrir tout l'espace du conteneur */
+  background-attachment: fixed; /* Effet parallax */
+  margin-top: 64px;
+  min-height: 400px; /* Hauteur minimale pour la section hero */
+  padding: 30px;
+}
+
+.hero-text {
+  background-color: #1c3e8dde; /* Couleur de fond avec opacité pour le texte du hero */
+  padding: 30px;
+  border-radius: 10px; /* Coins arrondis */
+  text-align: center;
+  width: 85%;
+  margin: 0 auto; /* Centrer le texte dans le conteneur */
+}
+
+/* --------------------------------- */
+/* Section Articles */
+/* Mise en page des cartes d'articles et leur contenu */
+/* --------------------------------- */
+
+.articles-section {
+  background: var(
+    --articles-section-background-color-gradient
+  ); /* Couleur de fond pour la section des articles */
+
+  display: flex;
+  flex-direction: column; /* Afficher les articles en colonne */
+}
+
+.article-title {
+  padding: 0 20px;
+  margin-top: 0; /* Supprimer la marge supérieure */
+}
+
+.article-image-container {
+  display: flex;
+
+  /* justify-content: center; */
+  align-items: center;
+  width: 60%;
+}
+
+.article-card-text {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+.article-card img {
+  border-radius: 10px; /* Coins arrondis pour les images des articles */
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.article-card {
+  display: flex;
+  margin-bottom: 50px;
+  background-color: var(
+    --single-article-background-color
+  ); /* Couleur de fond pour un article */
+
+  padding: 30px 20px;
+  gap: 20px;
+}
+
+.article-card-text p {
+  margin-top: 0;
+  padding: 20px; /* Espacement interne pour les paragraphes des articles */
+}
+
+#logo {
+  height: 80%; /* Taille du logo dans la barre de navigation */
+}
+
+#navbar a:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border-bottom: 1px solid #fff;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+  /* opacity: 0.8; */
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* --------------------------------- */
+/* Témoignages */
+/* Styles pour la grille de témoignages et cartes individuelles */
+/* --------------------------------- */
+
+.temoignages-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.temoignage-card {
+  background-color: var(--single-article-background-color);
+  border-radius: 10px;
+  width: 300px;
+  height: 450px;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+  position: relative;
+  overflow: hidden;
+}
+
+.temoignage-card h3 {
+  padding: 0;
+  margin: 0; /* Supprimer marges par défaut */
+}
+
+.temoignage-card img {
+  width: 100%; /* L'image prend toute la largeur de la carte */
+  height: 200px;
+  object-fit: cover; /* Couper l'image pour s'adapter */
+  border-radius: 10px; /* Coins arrondis pour les images */
+  margin-bottom: 15px;
+}
+
+.read-more {
+  position: absolute;
+  bottom: 20px;
+}
+
+.temoignage-card a:has(img) {
+  width: 100%;
+}
+
+.temoignage-card a,
+.article-card a,
+footer a {
+  color: var(--text-color);
+}
+
+.temoignage-card a:not(img):hover,
+.article-card a:not(img):hover,
+footer a:hover {
+  color: var(--required-color);
+  transform: scale(1.05);
+}
+
+.new-testimonial-card {
+  background-color: var(--text-color);
+  box-sizing: border-box;
+  border: 20px var(--accent-color) solid;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.new-testimonial-card a {
+  color: var(--accent-color);
+}
+
+.new-testimonial-card i {
+  font-size: 5em;
+}
+
+.new-testimonial-card a:hover {
+  opacity: 0.5;
+}
+
+/* --------------------------------- */
+/* Pied de page */
+/* Configuration du footer et ses composants */
+/* --------------------------------- */
+
+footer {
+  background-color: var(--primary-color); /* Couleur de fond du pied de page */
+  color: var(--text-color); /* Couleur du texte du pied de page */
+  display: flex;
+  justify-content: space-between; /* Espacer les éléments du pied de page */
+  align-items: flex-start;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around; /* Espacement égal autour des éléments */
+  width: 100%;
+  padding: 30px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Les éléments se replient si nécessaire */
+  box-sizing: border-box;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: left;
+}
+
+.footer-logo img {
+  max-width: 10%;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-center ul {
+  list-style: none; /* Pas de puces dans les listes */
+  padding: 0;
+}
+
+.footer-center ul li {
+  margin-bottom: 8px; /* Espacement entre les éléments de la liste */
+}
+
+.footer-right {
+  text-align: center;
+}
+
+.footer-right p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px; /* Espacement entre les icônes sociales */
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px; /* Taille des icônes sociales */
+}
+
+.fa-brands {
+  margin-right: 5px; /* Espacement supplémentaire pour les icônes de marque */
+}
+
+.newsletter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.newsletter-signup {
+  display: flex;
+  width: 100%;
+}
+
+footer button {
+  border-radius: 50px;
+  padding: 10px 40px 10px 40px;
+}
+
+footer input {
+  width: 100%;
+  border-radius: 20px;
+  font-size: 1.3em;
+  padding: 5px 0 5px 10px;
+}
+
+footer label {
+  margin-bottom: 10px;
+  color: var(--required-color);
+}
+
+/* <------------------------------ TYPES DE HANDICAP PAGE ------------------------------> */
+
+/* --------------------------------- */
+/* Page Types de Handicap */
+/* Styles spécifiques à la page des types de handicap */
+/* --------------------------------- */
+
+.types-de-handicap-page #hero {
+  background-image: url("../img/hero-2.webp");
+}
+
+/* .types-de-handicap-page .article-card-text {
+  width: 100%;
+} */
+
+.types-de-handicap-page .types-de-handicap-video {
+  width: 100%;
+}
+
+.types-de-handicap-page .types-de-handicap-video iframe {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* <------------------------------ TÉMOIGNAGES PAGE AND CONTACT PAGE FORM ------------------------------> */
+
+/* --------------------------------- */
+/* Page Témoignages et Formulaire de Contact */
+/* Styles pour les pages témoignages et contact */
+/* --------------------------------- */
+
+.temoignages-page #hero {
+  background-image: url("../img/hero-3.webp");
+}
+
+.temoignages-page .article-card {
+  margin-bottom: 0;
+}
+
+/* .temoignages-page .article-image-container img {
+  min-width: 80%;
+  min-height: 80%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+} */
+
+.temoignages-page #partagez-votre-experience h2 {
+  font-size: 2.5em;
+}
+
+.temoignages-page .form-container #temoignage-form,
+.contact-page .form-container #contact-form {
+  scroll-margin-top: 50vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.temoignages-page .form-container #temoignage-form input,
+.contact-page .form-container #contact-form input,
+.contact-page .form-container #contact-form select {
+  width: 100%;
+  border-radius: 20px;
+  font-size: 1.3em;
+  padding: 5px 0 5px 10px;
+  box-sizing: border-box;
+}
+
+.temoignages-page .form-container #temoignage-form textarea,
+.contact-page .form-container #contact-form textarea {
+  width: 100%;
+  height: 200px;
+  font-size: 1.3em;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.temoignages-page .form-container #temoignage-form .upload-area {
+  position: relative;
+  border: 2px #f0f0f0cc dashed;
+  border-radius: 5px;
+  padding: 5px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 0.5;
+}
+
+.temoignages-page
+  .form-container
+  #temoignage-form
+  .upload-area
+  input[type="file"] {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0;
+  text-indent: -100px;
+}
+
+.temoignages-page .form-container #temoignage-form .upload-area label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.upload-area:hover,
+.upload-area:focus-within {
+  opacity: 1 !important;
+}
+
+.temoignages-page .form-container #temoignage-form .upload-area #upload-sign {
+  font-size: 4em;
+}
+
+.temoignages-page .form-container #temoignage-form #required-message {
+  padding: 0;
+}
+
+.temoignages-page .form-container #temoignage-form .agreement {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+
+.temoignages-page .form-container #temoignage-form input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* <------------------------------ RESSOURCES PAGE ------------------------------> */
+
+/* --------------------------------- */
+/* Page Ressources */
+/* Styles pour la page des ressources et guides */
+/* --------------------------------- */
+
+.ressources-page #hero {
+  background-image: url("../img/hero-4.webp");
+}
+
+.ressources-page .guides-grid .guide-card a:hover {
+  background-color: var(--text-color);
+  color: var(--accent-color);
+}
+
+.ressources-page .guides-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+  gap: 30px;
+}
+
+.ressources-page .guides-grid .guide-card {
+  width: 30%;
+  text-align: center;
+}
+
+.ressources-page .guides-grid .guide-card h4 {
+  margin: 0;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-sizing: border-box;
+  background-color: var(--accent-color);
+}
+
+.ressources-page .guides-grid .guide-card a {
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.ressources-page .guides-grid .guide-card .document-preview {
+  width: 100%;
+  height: 400px;
+  box-sizing: border-box;
+}
+
+.ressources-page .guides-grid .guide-card .document-preview iframe {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.ressources-page .guides-grid .guide-card .click-to-download {
+  border-bottom: 1px solid var(--text-color);
+  border-left: 1px solid var(--text-color);
+  border-right: 1px solid var(--text-color);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.ressources-page #social-help .article-card img {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.ressources-page #social-help .article-card .article-card-text p {
+  padding: 0;
+}
+
+.ressources-page #social-help .article-card .article-card-text {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.ressources-page .articles-section a:hover {
+  background-color: var(--text-color);
+}
+
+.ressources-page .articles-section #link-to-handicap-gouv-fr {
+  width: fit-content;
+}
+
+/* <------------------------------ CONTACT PAGE ------------------------------> */
+
+/* --------------------------------- */
+/* Page Contact */
+/* Styles pour la page de contact et son formulaire */
+/* --------------------------------- */
+
+.contact-page #hero {
+  background-image: url("../img/hero-5.webp");
+}
+
+.contact-page .form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contact-page .form-container .contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px var(--text-color) solid;
+  margin-right: 10px;
+  width: 50%;
+  background-color: var(--accent-color);
+}
+
+.contact-page .form-container #contact-form {
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.contact-page .form-container .contact-info .google-maps iframe {
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.contact-page .form-container #contact-form .agreement input[type="checkbox"] {
+  width: auto;
+}
+
+.contact-page .form-container a {
+  color: var(--text-color);
+}
+
+.contact-page .form-container a:hover {
+  background-color: var(--text-color);
+  color: #000;
+}
+
+/* <------------------------------ RESSOURCES PAGE ------------------------------> */
+
+/* --------------------------------- */
+/* Page À Propos */
+/* Styles pour la page à propos et ses sections */
+/* --------------------------------- */
+
+.about-us-page #hero {
+  background-image: url("../img/hero-6.webp");
+}
+
+.about-us-page .article-card {
+  margin-bottom: 0;
+}
+
+.about-us-page .article-card .qui-sommes-nous-container,
+.about-us-page .article-card .notre-vision,
+.about-us-page .article-card .rejoignez-nous {
+  display: flex;
+  flex-direction: row;
+}
+
+.about-us-page .article-card img {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.about-us-page .article-card .notre-vision img {
+  width: 40%;
+}
+
+.about-us-page .article-card .article-card-text a:hover {
+  background-color: var(--text-color);
+  color: var(--accent-color);
+}
+
+.about-us-page .article-card .article-card-text a:has(button) {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+
+.about-us-page .article-card .article-card-text button:hover {
+  opacity: 0.8;
+  background-color: var(--required-color);
+}
+
+.about-us-page .article-card .article-card-text button {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 30px;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+/* <------------------------------ RESPONSIVENESS ------------------------------> */
+
+/* --------------------------------- */
+/* Responsive Design */
+/* Adaptations pour les écrans mobiles (max 600px) */
+/* --------------------------------- */
+
+@media only screen and (width <= 600px) {
+  #navbar a:nth-child(2) {
+    display: none;
+  }
+
+  #navbar a {
+    font-size: 0.7em;
+    padding: 0;
+  }
+
+  .article-card {
+    flex-direction: column;
+  }
+
+  .article-image-container {
+    width: 100%;
+  }
+
+  .article-card img {
+    border-radius: 10px; /* Coins arrondis pour les images des articles */
+    width: 100%;
+  }
+
+  .temoignages-grid {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .temoignages-page .form-container #temoignage-form {
+    width: 95%;
+  }
+
+  .ressources-page #social-help .article-card img {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .ressources-page #social-help .article-card .article-card-text {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .ressources-page .guides-grid .guide-card {
+    width: 90%;
+    text-align: center;
+  }
+
+  .contact-page .form-container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contact-page .form-container .contact-info {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+  }
+
+  .about-us-page .article-card img {
+    max-width: 100%;
+  }
+
+  .about-us-page .article-card .article-card-text {
+    width: 100%;
+  }
+
+  .about-us-page .article-card .qui-sommes-nous-container {
+    flex-direction: column-reverse;
+  }
+
+  .about-us-page .article-card .notre-vision,
+  .about-us-page .article-card .rejoignez-nous {
+    flex-direction: column;
+  }
+
+  .about-us-page .article-card .notre-vision img,
+  .about-us-page .article-card .rejoignez-nous img {
+    width: 90%;
+  }
+
+  .about-us-page .article-card .article-card-text a:has(button) {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 30px;
+  }
+}

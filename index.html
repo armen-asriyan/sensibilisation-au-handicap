@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Configuration de base de la page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <!--Commentaire original maintenu + explication: Intégration de Font Awesome pour les icônes-->
+    <script src="https://kit.fontawesome.com/3d24ae3fdc.js" crossorigin="anonymous"></script>
+
+    <!-- Configuration des favicons pour différents appareils et navigateurs -->
+    <link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/icons/site.webmanifest">
+
+    <title>Page d'accueil | Sensibilisation au Handicap</title>
+</head>
+
+<body>
+    <!-- En-tête du site contenant la navigation principale -->
+    <header>
+        <!-- Barre de navigation avec logo et menu -->
+        <nav id="navbar" aria-label="Navigation principale">
+            <!-- Logo cliquable ramenant à l'accueil -->
+            <a href="./index.html" aria-label="Retour à l'accueil">
+                <img id="logo" src="./assets/img/logo.png" alt="Sensibilisation au Handicap logo">
+            </a>
+
+            <a href="./index.html" aria-label="Retour à l'accueil; button 2">
+                <h2>Sensibilisation au Handicap</h2>
+            </a>
+
+            <!-- Menu principal du site -->
+            <ul role="menubar" aria-label="Menu principal">
+                <li><a href="./templates/types.html" role="menuitem">Types de handicaps</a></li>
+                <li><a href="./templates/temoignages.html" role="menuitem">Témoignages</a></li>
+                <li><a href="./templates/ressources.html" role="menuitem">Ressources</a></li>
+                <li><a href="./templates/contact.html" role="menuitem">Contact</a></li>
+                <li><a href="./templates/about.html" role="menuitem">À propos</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main role="main" id="main-content">
+        <!-- Section d'introduction avec titre et texte d'accroche -->
+        <section id="hero">
+            <div class="hero-text" aria-labelledby="hero-title">
+                <h1>Blog</h1>
+                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti finibus inceptos integer lectus; a
+                    sapien
+                    condimentum. Ut auctor varius justo duis consequat fringilla curabitur. Natoque eros inceptos
+                    consectetur integer curae, libero feugiat. Vulputate torquent porttitor egestas platea; ligula
+                    aliquam
+                    libero. Tellus vestibulum vitae hendrerit semper platea facilisi; justo ullamcorper. Sit magna
+                    nullam
+                    dis platea ex in dictum aliquet. Venenatis ornare nulla metus est tortor penatibus nostra. Quis arcu
+                    venenatis tellus; egestas sit consectetur orci tortor penatibus?</p>
+            </div>
+        </section>
+
+        <!-- Section présentant les articles récents -->
+        <section class="articles-section" id="recent-articles-section" aria-labelledby="recent-articles-heading">
+
+            <h2 class="vertical-padding-20">Articles récents</h2>
+
+            <!-- Article 1 : Reportage sur le fumoir à Quimper -->
+            <div class="article-card">
+
+                <div class="article-image-container">
+                    <img src="./assets/img/article-1.webp" alt="">
+                </div>
+
+                <div class="article-card-text">
+                    <h3 class="article-title">« Nous sommes les seuls en France » : ces travailleurs handicapés bretons
+                        créent leur fumoir
+                    </h3>
+                    <p>À Quimper (Finistère), l&#39;Esat de la fondation de Sillery vient de développer une activité
+                        innovante : un fumoir à poissons et viandes. Six travailleurs handicapés s&#39;en chargent. Les
+                        produits sont ensuite vendus au grand public et aux restaurateurs...→</p>
+                </div>
+            </div>
+
+            <!-- Article 2 : Hommage à Daniel Guedon -->
+            <div class="article-card">
+
+                <div class="article-image-container">
+                    <img src="./assets/img/article-2.webp" alt="">
+                </div>
+
+                <div class="article-card-text">
+                    <h3 class="article-title">À Laval, Daniel Guedon, sportif émérite et engagé pour la pratique
+                        sportive des sourds, est décédé
+                    </h3>
+                    <p>Pendant toute sa vie, Daniel Guedon a œuvré pour la pratique sportive des sourds. Le Mayennais a
+                        notamment été médaillé d&rsquo;argent aux Jeux olympiques silencieux en 1957 à Milan (Italie).
+                        Il est
+                        décédé le 22 octobre 2024. Ses obsèques seront célébrées à Laval (Mayenne), samedi 26 octobre
+                        2024...→</p>
+                </div>
+            </div>
+
+            <!-- Article 3 : Actualité handisport -->
+            <div class="article-card">
+
+                <div class="article-image-container">
+                    <img src="./assets/img/article-3.webp" alt="">
+                </div>
+
+                <div class="article-card-text">
+                    <h3 class="article-title">Handisport. Au Nantes Métropole Futsal, une section pionnière
+                    </h3>
+                    <p>Créée au milieu des années 2010, la section handisport du Nantes Métropole Futsal attire de plus
+                        en plus de pratiquants. Un effet Jeux paralympiques et Mondial de futsal qui ne se démend pas.
+                        Reportage...→</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section des témoignages personnels -->
+        <section class="articles-section" id="temoignages-section">
+            <h2 class="vertical-padding-20">Consultez les témoignages</h2>
+            <!-- Grille contenant les cartes de témoignages -->
+            <div class="temoignages-grid" role="list">
+
+                <!-- Témoignage de Sophie -->
+                <div class="temoignage-card" role="listitem">
+
+                    <a href="./templates/temoignages.html#sophie" aria-labelledby="sophie-name sophie-quote">
+                        <img src="./assets/img/person-1.webp" alt="Portrait de Sophie" id="sophie">
+                    </a>
+
+                    <h3 id="sophie-name">Sophie, 29 ans</h3>
+
+                    <p id="sophie-quote">« Mon parcours avec la sclérose en plaques m'a appris à ne jamais abandonner. »
+                    </p>
+                    <a href="./templates/temoignages.html#sophie" class="read-more">Lire la suite →</a>
+                </div>
+
+                <!-- Témoignage de Jean -->
+                <div class="temoignage-card">
+
+                    <a href="./templates/temoignages.html#jean">
+                        <img src="./assets/img/person-2.webp" alt="Portrait de Jean">
+                    </a>
+
+                    <h3>Jean, 45 ans</h3>
+                    <p>« Avec le soutien des technologies auditives, j'ai retrouvé ma liberté. »</p>
+                    <a href="./templates/temoignages.html#jean" class="read-more">Lire la suite →</a>
+                </div>
+
+                <!-- Témoignage de Marie -->
+                <div class="temoignage-card">
+
+                    <a href="./templates/temoignages.html#marie">
+                        <img src="./assets/img/person-3.webp" alt="Portrait de Marie">
+
+                    </a>
+                    <h3>Marie, 72 ans</h3>
+                    <p>« Vivre avec la cécité et l'autisme : mon parcours de résilience et de découverte. »</p>
+                    <a href="./templates/temoignages.html#marie" class="read-more">Lire la suite →</a>
+                </div>
+
+                <!-- Carte d'invitation à partager son témoignage -->
+                <div class="temoignage-card new-testimonial-card">
+
+                    <a href="./templates/temoignages.html#partagez-votre-experience">
+                        <i class="fa-solid fa-plus"></i>
+                        <p>Partagez votre expérience !</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Pied de page du site -->
+    <footer>
+
+        <div class="footer-container">
+
+            <!-- Zone gauche : logo, copyright et newsletter -->
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <img src="./assets/img/logo.png" alt="Sensibilisation au Handicap logo">
+
+                    <h3>Sensibilisation au Handicap</h3>
+                </div>
+                <p>&copy; 2024 Sensibilisation au Handicap. Tous droits réservés.</p>
+
+                <!-- Formulaire d'inscription à la newsletter -->
+                <form action="/subscribe" method="POST" class="newsletter">
+                    <label for="newsletter-email">Inscrivez-vous à notre newsletter pour rester informé !</label>
+
+                    <div class="newsletter-signup">
+                        <input type="email" id="newsletter-email" aria-label="Votre adresse e-mail pour la newsletter"
+                            placeholder="Votre adresse e-mail" required>
+
+                        <button type="submit" class="sign-up-to-newsletter"
+                            aria-label="S'inscrire à la newsletter">S'inscrire</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Zone centrale : liens légaux -->
+            <div class="footer-center">
+                <h4>Informations Légales</h4>
+                <ul>
+                    <li><a href="./templates/mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="./templates/politique-confidentialite.html">Politique de confidentialité</a></li>
+                    <li><a href="./templates/gestion-cookies.html">Gestion des cookies</a></li>
+                    <li><a href="./templates/cgu.html">Conditions générales d'utilisation</a></li>
+                </ul>
+            </div>
+
+            <!-- Zone droite : contact et réseaux sociaux -->
+            <div class="footer-right">
+                <h4>Contactez-nous</h4>
+                <p><a href="mailto:contact@sensibilisation-handicap.fr">contact@sensibilisation-handicap.fr</a></p>
+                <div class="social-icons" role="navigation" aria-label="Réseaux sociaux">
+                    <a href="#" aria-label="Visitez notre page Facebook"><i
+                            class="fa-brands fa-facebook-f"></i>Facebook</a>
+                    <a href="#" aria-label="Visitez notre page X / Twitter"><i
+                            class="fa-brands fa-x-twitter"></i>Twitter</a>
+                    <a href="#" aria-label="Visitez notre page Instagram"><i
+                            class="fa-brands fa-instagram"></i>Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
